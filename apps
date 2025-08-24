@@ -1,3 +1,74 @@
 sudo pacman -S --noconfirm --needed ttf-jetbrains-mono dash imlib2 xsetroot gd libxft-bgra rustup paru fzf zoxide ripgrep eza fd lazygit lazydocker btop impala fastfetch obsidian pinta localsend signal mpv obsstudio kdenlive typora docker minecraft-launcher fish ghostty base-devel kitty alsa-tools alsa-utils audacious audacious-plugins firefox gvfs htop lxappearance maim mesa glu libva-mesa-driver mesa-vdpau libvdpau libva-vdpau-driver mpv neofetch feh ntfs-3g pavucontrol pipewire libpipewire pipewire-alsa pipewire-pulse picom polybar rofi sxhkd tar unzip unrar p7zip thunar xclip xorg yt-dlp wget curl aria2 gcc make htop firejail git viewnior xdg-user-dirs fluxbox neovim xorg-xsetroot gd libxft xf86-input-libinput xorg-setxkbmap xorg-xrandr arandr xorg-xrdb xorg-xset xorgproto xorg-server xorg-server-common xorg-xauth xorg-xhost xdg-utils xcb-proto xcb-util zip udev psmisc harfbuzz acpi acpid alsa-firmware alsa-lib alsa-plugins alsa-topology-conf alsa-ucm-conf alsa-utils atril bzip2 ca-certificates ca-certificates-mozilla ca-certificates-utils chromaprint connman-gtk curl dbus dbus-glib ntfs-3g dosfstools efibootmgr efivar ffmpeg ffmpegthumbnailer ffmpegthumbs freetype2 udisks2 imlib2 libva libva-nvidia-driver intel-media-driver nvidia-prime nvidia-settings nvidia-utils opencl-nvidia obsidian rofi
 
-sudo pacman -S --noconfirm --needed
+sudo pacman -S --noconfirm --needed imv evince chromium firefox mpv 
+
+nvidia-open-dkms
+ "nvidia-utils"
+    "lib32-nvidia-utils"
+    "egl-wayland"
+    "libva-nvidia-driver" # For VA-API hardware acceleration
+    "qt5-wayland"
+    "qt6-wayland"
+
+brightnessctl playerctl pamixer wiremix wireplumber \
+  fcitx5 fcitx5-gtk fcitx5-qt wl-clip-persist \
+  nautilus sushi ffmpegthumbnailer gvfs-mtp \
+  slurp satty \
+  mpv evince imv \
+  chromium
+
+ttf-font-awesome ttf-cascadia-mono-nerd ttf-ia-writer noto-fonts noto-fonts-emoji
+ttf-jetbrains-mono noto-fonts-cjk noto-fonts-extra
+
+  cargo clang llvm mise \
+  imagemagick \
+  mariadb-libs postgresql-libs \
+  github-cli \
+  lazygit lazydocker-bin
+
+ docker docker-compose docker-buildx
+
+  wget curl unzip inetutils impala \
+  fd eza fzf ripgrep zoxide bat jq xmlstarlet \
+  wl-clipboard fastfetch btop \
+  man tldr less whois plocate bash-completion \
+  alacritty
+
+gnome-calculator gnome-keyring signal-desktop \
+    obsidian-bin libreoffice obs-studio kdenlive \
+    xournalpp localsend-bin
+
+pinta typora spotify zoom
+
+# Open all images with imv
+xdg-mime default imv.desktop image/png
+xdg-mime default imv.desktop image/jpeg
+xdg-mime default imv.desktop image/gif
+xdg-mime default imv.desktop image/webp
+xdg-mime default imv.desktop image/bmp
+xdg-mime default imv.desktop image/tiff
+
+# Open PDFs with the Document Viewer
+xdg-mime default org.gnome.Evince.desktop application/pdf
+
+# Use Chromium as the default browser
+xdg-settings set default-web-browser chromium.desktop
+xdg-mime default chromium.desktop x-scheme-handler/http
+xdg-mime default chromium.desktop x-scheme-handler/https
+
+# Open video files with mpv
+xdg-mime default mpv.desktop video/mp4
+xdg-mime default mpv.desktop video/x-msvideo
+xdg-mime default mpv.desktop video/x-matroska
+xdg-mime default mpv.desktop video/x-flv
+xdg-mime default mpv.desktop video/x-ms-wmv
+xdg-mime default mpv.desktop video/mpeg
+xdg-mime default mpv.desktop video/ogg
+xdg-mime default mpv.desktop video/webm
+xdg-mime default mpv.desktop video/quicktime
+xdg-mime default mpv.desktop video/3gpp
+xdg-mime default mpv.desktop video/3gpp2
+xdg-mime default mpv.desktop video/x-ms-asf
+xdg-mime default mpv.desktop video/x-ogm+ogg
+xdg-mime default mpv.desktop video/x-theora+ogg
+xdg-mime default mpv.desktop application/ogg
